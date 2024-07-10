@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>To Do List</title>
+  </head>
+  <body>
+    <header>
+      <h1>To Do List</h1>
+    </header>
+    <main class="container">
+      <form>
+        <input placeholder="tulis disini kegiatan mu" class="todo-input" />
+        <div class="tombol"> 
+            <button 
+            type="button" 
+            class="add-button"
+            onclick="addTodo()"
+          >
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGNsYXNzPSJsdWNpZGUgbHVjaWRlLXNxdWFyZS1wbHVzIj48cmVjdCB3aWR0aD0iMTgiIGhlaWdodD0iMTgiIHg9IjMiIHk9IjMiIHJ4PSIyIi8+PHBhdGggZD0iTTggMTJoOCIvPjxwYXRoIGQ9Ik0xMiA4djgiLz48L3N2Zz4=" alt="Tambah">
+            Tambah
+          </button>
+          <button 
+            type="button" 
+            class="remove-button"
+            onclick="removeTodo()"
+          >
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGNsYXNzPSJsdWNpZGUgbHVjaWRlLXRyYXNoLTIiPjxwYXRoIGQ9Ik0zIDZoMTgiLz48cGF0aCBkPSJNMTkgNnYxNGMwIDEtMSAyLTIgMkg3Yy0xIDAtMi0xLTItMlY2Ii8+PHBhdGggZD0iTTggNlY0YzAtMSAxLTIgMi0yaDRjMSAwIDIgMSAyIDJ2MiIvPjxsaW5lIHgxPSIxMCIgeDI9IjEwIiB5MT0iMTEiIHkyPSIxNyIvPjxsaW5lIHgxPSIxNCIgeDI9IjE0IiB5MT0iMTEiIHkyPSIxNyIvPjwvc3ZnPg==" alt="Hapus">
+            Hapus
+          </button>
+        </div>
+      </form>
+      <section>
+        <ul class="todo-list"></ul>
+      </section>
+      <section>
+         <div class="information">
+        <div class="tips">
+          <aside class="sidebar">
+            <h2>
+              <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGNsYXNzPSJsdWNpZGUgbHVjaWRlLWxpZ2h0YnVsYiI+PHBhdGggZD0iTTE1IDE0Yy4yLTEgLjctMS43IDEuNS0yLjUgMS0uOSAxLjUtMi4yIDEuNS0zLjVBNiA2IDAgMCAwIDYgOGMwIDEgLjIgMi4yIDEuNSAzLjUuNy43IDEuMyAxLjUgMS41IDIuNSIvPjxwYXRoIGQ9Ik05IDE4aDYiLz48cGF0aCBkPSJNMTAgMjJoNCIvPjwvc3ZnPg==" alt="prdocutivity">
+              Tips untuk produktif 
+            </h2>
+            <ul>
+              <li>Selalu mengerjakan dari hal yang paling penting terlebih dahulu</li>
+              <li>Membuat list yang akan dikerjakan</li>
+              <li>Ambil waktu istirahat yang teratur agar kegiatan lainya dapat dikerjan tanpa kecapean dan tetap fokus</li>
+            </ul>
+          </aside>
+        </div>
+          <div class="artikel">
+            <article class="main-content">
+                <h2>
+                  <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGNsYXNzPSJsdWNpZGUgbHVjaWRlLXNjaG9vbCI+PHBhdGggZD0iTTE0IDIydi00YTIgMiAwIDEgMC00IDB2NCIvPjxwYXRoIGQ9Im0xOCAxMCA0IDJ2OGEyIDIgMCAwIDEtMiAySDRhMiAyIDAgMCAxLTItMnYtOGw0LTIiLz48cGF0aCBkPSJNMTggNXYxNyIvPjxwYXRoIGQ9Im00IDYgOC00IDggNCIvPjxwYXRoIGQ9Ik02IDV2MTciLz48Y2lyY2xlIGN4PSIxMiIgY3k9IjkiIHI9IjIiLz48L3N2Zz4=" alt="tutorial">
+                   Cara pemakaian 
+              </h2>
+              <ul>
+                <br>
+                <li>Masukan kegiatan pada bagian input</li>
+                <br>
+                <li>Tekan tombol tambah untuk memasukan dan jika ingin menghapus tekan tombol hapus</li>
+                <br>
+                <li>Kamu juga bisa hapus kegiatan yang tidak kamu inginkan dengan menekan tanda x di sebelah kanan hasil input</li>
+                <br>
+              </ul>
+              </article>
+          </div>
+      </section>
+    </main>
+    
+    <footer class="footer">
+      <p>&copy; 2024 Submission Rafsanjani</p>
+    </footer>
+    
+    <script src="script.js"></script>
+  </body>
+</html>

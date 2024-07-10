@@ -1,0 +1,169 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Courier New", Courier, monospace;
+  margin-right: 4px;
+}
+
+body {
+  background: rgb(52, 52, 52);
+  color: rgb(230, 230, 230);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+  padding: 32px;
+  height: 100vh;
+}
+
+header {
+  text-align: center;
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+.container {
+  width: 100%;
+  max-width: 600px;
+}
+
+form {
+  display: grid;
+  gap: 16px;
+}
+
+form div {
+  display: flex;
+  gap: 16px;
+}
+
+.todo-input {
+  padding: 8px;
+  width: 100%;
+  border: none;
+  border-radius: 4px;
+}
+
+.add-button,
+.remove-button {
+  flex: 1;
+  padding: 8px;
+  cursor: pointer;
+  border: none;
+  border-radius: 4px;
+  color: rgb(230, 230, 230);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.add-button {
+  background-color: green;
+}
+
+.remove-button {
+  background-color: crimson;
+}
+
+button img {
+  width: 24px;
+  height: 24px;
+  vertical-align: middle;
+}
+
+.todo-list {
+  list-style: none;
+  padding: 0;
+}
+
+.todo-list li {
+  display: flex;
+  justify-content: space-between;
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 8px;
+  border-radius: 4px;
+  margin-bottom: 8px;
+}
+
+.todo-list li p {
+  margin: 0;
+}
+
+.todo-list li span {
+  background-color: crimson;
+  padding: 4px 8px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.information {
+  display: flex;
+  justify-content: space-between;
+  gap: 32px;
+  margin-top: 25px;
+  width: 100%;
+  flex-direction: row;
+  height: 400px;
+}
+
+.tips {
+  width: calc(50% - 16px); 
+  border-style: solid;
+  padding: 24px;
+}
+
+.artikel {
+  width: calc(50% - 16px); 
+  border-style: solid;
+  padding: 20px;
+}
+
+.artikel ul {
+  list-style-type: none; 
+  padding: 0; 
+  margin: 0; 
+}
+
+.sidebar {
+  margin-top: 32px;
+  width: 100%;
+  max-width: 600px;
+}
+
+.sidebar h2 {
+  margin-bottom: 16px;
+  margin-top:-10%;
+  display: inline-flex;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar li {
+  margin-bottom: 8px;
+}
+
+.main-content {
+  margin-top: 32px;
+  width: 100%;
+  max-width: 600px;
+}
+
+.main-content h2 {
+  margin-bottom: 16px;
+  margin-top:-10%;
+  display: inline-flex;
+}
+
+.footer p {
+  margin-top: 32px;
+  text-align: center;
+}
